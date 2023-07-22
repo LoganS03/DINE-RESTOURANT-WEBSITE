@@ -1,0 +1,205 @@
+@import "./style.scss";
+
+header{
+    width: 100%;
+    height: 600px;
+    color: #fff;
+    background-color: $primary-dark;
+    background-image: url(../img/desktop/booking/bg-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    
+    padding-top: 65px;
+    padding-bottom: 154px;
+
+    .promo_page{
+        display: flex;
+        justify-content: space-between;
+
+        .logo{
+            margin-bottom: 153px;
+        }
+
+        .promo_content{
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            .text{
+                h1{
+                    margin-bottom: 18px;
+                }
+                p{
+                    max-width: 445px;
+                }
+            }
+        }
+    }
+    form{
+        transform: translateY(200px);
+        width: 540px;
+        height: 545px;
+
+        display: flex;
+        flex-direction: column;
+
+        background: #fff;
+        padding: 50px 48px 48px;
+
+        .error{
+            visibility: hidden;
+            color: #B54949;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: -0.125px;
+        }
+
+        .input{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 28px;
+        }
+        input{
+            padding-left: 16px;
+            padding-bottom: 15px;
+            margin-bottom: 12px;
+            border: none;
+            border-bottom: 1px solid #8E8E8E;
+            outline: none;
+        }
+
+        #firstname, #email{
+            color: #111;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+        }
+
+        .date{
+            margin-bottom: 34px;
+        }
+        .time{
+            margin-bottom: 36px;
+        }
+        .date, .time{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .label{
+                display: flex;
+                flex-direction: column;
+            }
+
+            label{
+                color: $primary-dark;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 28px;
+            }
+            select{
+                width: 80px;
+                height: 43px;
+                appearance: none;
+                border: none;
+                border-bottom: 1px solid #8E8E8E;
+                padding-left: 16px;
+                padding-bottom: 16px;
+
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 28px;
+                outline: none;
+            }
+            .select{
+                display: flex;
+                gap: 16px;
+
+                &:last-child(){
+                    width: 97px;
+                }
+            }
+        }
+        
+        .people{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            color: #151515;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: -0.25px;
+
+            padding-bottom: 10px;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #8E8E8E;
+
+            .minus, .plus{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 50px;
+                height: 30px;
+                
+                cursor: pointer;
+            }
+        }
+
+        button{
+            color: white;
+            background: $primary-dark;
+
+            &:hover{
+                background: transparent;
+                color: $primary-dark;
+            }
+        }
+    }
+}
+
+main{
+    flex-grow: 1;
+    background: #fff;
+    background-image: url(../img/pattern/pattern-curve-bottom-right.svg);
+}
+
+footer{
+    width: 100%;
+
+    color: #fff;
+    background: $primary-dark;
+
+    .footer-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-top: 78px;
+        padding-bottom: 76px;
+        
+        a{
+            align-self: start;
+        }
+
+        div{
+            display: flex;
+            gap: 124px;
+
+            address, .worktime{
+                font-size: 14px;
+                font-weight: 400;
+                font-style: normal;
+                line-height: 28px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+    
+            .worktime{
+                width: 450px;
+            }
+        }
+    }
+}

@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: League Spartan;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1110px;
+  padding: 0 50px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+.headingXL {
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 80px;
+  letter-spacing: -1px;
+}
+
+.headingL {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.5px;
+}
+
+.headingM {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+}
+
+.headingS {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 2.5px;
+}
+
+.text-1 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.text-2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 25px 55px 23px 54px;
+}
+
+.btn-light {
+  color: #111;
+  border: 1px solid #111;
+}
+.btn-light:hover {
+  color: #fff;
+  background: #111;
+}
+
+.btn-dark {
+  color: #fff;
+  border: 1px solid #FFF;
+}
+.btn-dark:hover {
+  color: #17192B;
+  background: #fff;
+}
+
+.btn-inactive {
+  opacity: 0.25;
+}
+
+.tablet, .mobile {
+  display: none;
+}
+
+header {
+  width: 100%;
+  height: 600px;
+  color: #fff;
+  background-color: #111;
+  background-image: url(../img/desktop/booking/bg-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  padding-top: 65px;
+  padding-bottom: 154px;
+}
+header .promo_page {
+  display: flex;
+  justify-content: space-between;
+}
+header .promo_page .logo {
+  margin-bottom: 153px;
+}
+header .promo_page .promo_content {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+header .promo_page .promo_content .text h1 {
+  margin-bottom: 18px;
+}
+header .promo_page .promo_content .text p {
+  max-width: 445px;
+}
+header form {
+  transform: translateY(200px);
+  width: 540px;
+  height: 545px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 50px 48px 48px;
+}
+header form .error {
+  visibility: hidden;
+  color: #B54949;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.125px;
+}
+header form .input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+header form input {
+  padding-left: 16px;
+  padding-bottom: 15px;
+  margin-bottom: 12px;
+  border: none;
+  border-bottom: 1px solid #8E8E8E;
+  outline: none;
+}
+header form #firstname, header form #email {
+  color: #111;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+header form .date {
+  margin-bottom: 34px;
+}
+header form .time {
+  margin-bottom: 36px;
+}
+header form .date, header form .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header form .date .label, header form .time .label {
+  display: flex;
+  flex-direction: column;
+}
+header form .date label, header form .time label {
+  color: #111;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+header form .date select, header form .time select {
+  width: 80px;
+  height: 43px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-bottom: 1px solid #8E8E8E;
+  padding-left: 16px;
+  padding-bottom: 16px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  outline: none;
+}
+header form .date .select, header form .time .select {
+  display: flex;
+  gap: 16px;
+}
+header form .date .select:last-child(), header form .time .select:last-child() {
+  width: 97px;
+}
+header form .people {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #151515;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+  padding-bottom: 10px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #8E8E8E;
+}
+header form .people .minus, header form .people .plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+}
+header form button {
+  color: white;
+  background: #111;
+}
+header form button:hover {
+  background: transparent;
+  color: #111;
+}
+
+main {
+  flex-grow: 1;
+  background: #fff;
+  background-image: url(../img/pattern/pattern-curve-bottom-right.svg);
+}
+
+footer {
+  width: 100%;
+  color: #fff;
+  background: #111;
+}
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 78px;
+  padding-bottom: 76px;
+}
+footer .footer-content a {
+  align-self: start;
+}
+footer .footer-content div {
+  display: flex;
+  gap: 124px;
+}
+footer .footer-content div address, footer .footer-content div .worktime {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+footer .footer-content div .worktime {
+  width: 450px;
+}/*# sourceMappingURL=booking.css.map */

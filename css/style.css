@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: League Spartan;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1110px;
+  padding: 0 50px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+.headingXL {
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 80px;
+  letter-spacing: -1px;
+}
+
+.headingL {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.5px;
+}
+
+.headingM {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+}
+
+.headingS {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 2.5px;
+}
+
+.text-1 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.text-2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 25px 55px 23px 54px;
+}
+
+.btn-light {
+  color: #111;
+  border: 1px solid #111;
+}
+.btn-light:hover {
+  color: #fff;
+  background: #111;
+}
+
+.btn-dark {
+  color: #fff;
+  border: 1px solid #FFF;
+}
+.btn-dark:hover {
+  color: #17192B;
+  background: #fff;
+}
+
+.btn-inactive {
+  opacity: 0.25;
+}
+
+.tablet, .mobile {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
