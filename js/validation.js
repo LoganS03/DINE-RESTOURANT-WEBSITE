@@ -155,7 +155,7 @@ function isEmpty(){
 				inpStatus[index] == false
 			}
 			else{
-				if(input.name = "email"){
+				if(input.name === "email"){
 					inpEmailValidate(input, index)
 				}
 				else{
