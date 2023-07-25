@@ -62,6 +62,7 @@ body {
 
 .btn {
   display: inline-block;
+  text-align: center;
   font-size: 17px;
   font-weight: 600;
   line-height: 16px;
@@ -99,15 +100,12 @@ body {
 
 header {
   width: 100%;
-  height: 600px;
   color: #fff;
-  background-color: #111;
   background-image: url(../img/desktop/booking/bg-desktop.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
   padding-top: 65px;
-  padding-bottom: 154px;
 }
 header .promo_page {
   display: flex;
@@ -116,74 +114,81 @@ header .promo_page {
 header .promo_page .logo {
   margin-bottom: 153px;
 }
-header .promo_page .promo_content {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
 header .promo_page .promo_content .text h1 {
   margin-bottom: 18px;
 }
 header .promo_page .promo_content .text p {
   max-width: 445px;
 }
-header form {
-  transform: translateY(200px);
-  width: 540px;
+header .promo_page form {
+  width: 100%;
+  max-width: 540px;
   height: 545px;
   display: flex;
   flex-direction: column;
   background: #fff;
   padding: 50px 48px 48px;
+  box-shadow: 0px 75px 100px -50px rgba(56, 66, 85, 0.5);
+  transform: translateY(200px);
 }
-header form .error {
+header .promo_page form .error-text {
   visibility: hidden;
   color: #B54949;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: -0.125px;
 }
-header form .input {
+header .promo_page form .input {
   display: flex;
   flex-direction: column;
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
-header form input {
-  padding-left: 16px;
+header .promo_page form input {
+  padding-left: 15px;
   padding-bottom: 15px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   border: none;
   border-bottom: 1px solid #8E8E8E;
+  color: #111;
   outline: none;
 }
-header form #firstname, header form #email {
-  color: #111;
+header .promo_page form .error {
+  color: #B54949;
+  border-color: #B54949;
+}
+header .promo_page form .error::-moz-placeholder {
+  color: #B54949;
+}
+header .promo_page form .error::placeholder {
+  color: #B54949;
+}
+header .promo_page form #firstname, header .promo_page form #email {
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
 }
-header form .date {
+header .promo_page form .date {
   margin-bottom: 34px;
 }
-header form .time {
+header .promo_page form .time {
   margin-bottom: 36px;
 }
-header form .date, header form .time {
+header .promo_page form .date, header .promo_page form .time {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header form .date .label, header form .time .label {
+header .promo_page form .date .label, header .promo_page form .time .label {
   display: flex;
   flex-direction: column;
 }
-header form .date label, header form .time label {
+header .promo_page form .date label, header .promo_page form .time label {
   color: #111;
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
 }
-header form .date select, header form .time select {
+header .promo_page form .date select, header .promo_page form .time select {
   width: 80px;
   height: 43px;
   -webkit-appearance: none;
@@ -197,15 +202,24 @@ header form .date select, header form .time select {
   font-weight: 400;
   line-height: 28px;
   outline: none;
+  cursor: pointer;
 }
-header form .date .select, header form .time .select {
+header .promo_page form .date .error, header .promo_page form .time .error {
+  border-color: #B54949;
+}
+header .promo_page form .date .select, header .promo_page form .time .select {
   display: flex;
   gap: 16px;
 }
-header form .date .select:last-child(), header form .time .select:last-child() {
+header .promo_page form .date .select:last-child(), header .promo_page form .time .select:last-child() {
   width: 97px;
 }
-header form .people {
+header .promo_page form .date select[name=part], header .promo_page form .time select[name=part] {
+  background-image: url(../img/icons/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: right 10px;
+}
+header .promo_page form .people {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -218,27 +232,44 @@ header form .people {
   margin-bottom: 32px;
   border-bottom: 1px solid #8E8E8E;
 }
-header form .people .minus, header form .people .plus {
+header .promo_page form .people .minus, header .promo_page form .people .plus {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 30px;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-header form button {
+header .promo_page form button {
+  cursor: pointer;
+  border: none;
+  outline: none;
   color: white;
   background: #111;
 }
-header form button:hover {
+header .promo_page form button:hover {
   background: transparent;
   color: #111;
+  border: 1px solid #111;
+}
+header .page {
+  height: 320px;
+  background-color: #fff;
+  background-image: url(../img/pattern/pattern-curve-bottom-right.svg);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+header .page svg {
+  margin-top: 166px;
 }
 
 main {
   flex-grow: 1;
   background: #fff;
-  background-image: url(../img/pattern/pattern-curve-bottom-right.svg);
 }
 
 footer {
@@ -258,7 +289,8 @@ footer .footer-content a {
 }
 footer .footer-content div {
   display: flex;
-  gap: 124px;
+  justify-content: space-between;
+  flex-grow: 0.5;
 }
 footer .footer-content div address, footer .footer-content div .worktime {
   font-size: 14px;
@@ -268,6 +300,119 @@ footer .footer-content div address, footer .footer-content div .worktime {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-footer .footer-content div .worktime {
-  width: 450px;
+
+@media (max-width: 1023px) {
+  .container {
+    max-width: 689px;
+    padding: 0 40px;
+  }
+  .headingXL {
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: -0.6px;
+  }
+  header {
+    background-image: url(../img/tablet/booking/bg-tablet.jpg);
+    background-size: contain;
+  }
+  header .promo_page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header .promo_page .logo {
+    margin-bottom: 70px;
+  }
+  header .promo_page .promo_content .text {
+    text-align: center;
+  }
+  header .promo_page .promo_content .text h1 {
+    margin-bottom: 12px;
+  }
+  header .promo_page .promo_content .text p {
+    max-width: 573px;
+  }
+  header .promo_page form {
+    transform: translateY(38px);
+    margin-bottom: 120px;
+  }
+  header .page {
+    height: 0;
+    background-image: none;
+  }
+  header .page svg {
+    display: none;
+  }
+  footer .footer-content {
+    padding-top: 64px;
+    padding-bottom: 62px;
+    gap: 50px;
+  }
+  footer .footer-content div {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+@media (max-width: 545px) {
+  .container {
+    max-width: 327px;
+    padding: 0 24px;
+  }
+  .headingXL {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+  .headingL {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+  .text-1 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  header {
+    background-image: url(../img/mobile/booking/bg-mobile.jpg);
+  }
+  header .promo_page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header .promo_page .logo {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  header .promo_page .promo_content .text p {
+    margin-bottom: 19px;
+  }
+  header .promo_page form {
+    max-width: 327px;
+    height: 585px;
+    padding: 34px 32px 32px;
+  }
+  header .promo_page form .date, header .promo_page form .time {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header .promo_page form button {
+    padding: 25px 20px;
+  }
+  footer .footer-content {
+    padding-top: 80px;
+    padding-bottom: 78px;
+    flex-direction: column;
+    text-align: center;
+    gap: 42px;
+  }
+  footer .footer-content a {
+    align-self: center;
+  }
+}
+@media (max-width: 340px) {
+  header .promo_page form .date select, header .promo_page form .time select {
+    width: 60px;
+    font-size: 15px;
+  }
 }/*# sourceMappingURL=booking.css.map */

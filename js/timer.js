@@ -1,4 +1,4 @@
-let deadline = '2023-08-15T00:00:00'
+let deadline = '2023-08-25T05:27:00'
 let now = new Date()
 
 function getTimerData(dl){
@@ -26,6 +26,11 @@ function startTimer(dl){
 		hoursEl = document.querySelector('.hours .value'),
 		minutesEl = document.querySelector('.minutes .value'),
 		secondsEl = document.querySelector('.seconds .value')
+		
+	let daysDiv = document.querySelector(".days"),
+		hoursDiv = document.querySelector(".hours"),
+		minutesDiv = document.querySelector(".minutes"),
+		secondsDiv = document.querySelector(".seconds")
 
 	let timerId = setInterval(updateTimer, 1000)
 	
@@ -40,23 +45,22 @@ function startTimer(dl){
 		if(timer.t < 0){
 			clearInterval(timerId)
 		}
+
+		if(timer.days == 0){
+			daysDiv.style.display = 'none'
+			if(timer.hours == 0){
+				hoursDiv.style.display = 'none'
+				if(timer.minutes == 0){
+					minutesDiv.style.display = 'none'
+					if(timer.seconds){
+						secondsDiv.style.display = 'none'
+					}
+				}
+			}
+		}
 	}
-
-	let timerDays = document.querySelector(".days"),
-		timerHours = document.querySelector(".hours"),
-		timerMinutes = document.querySelector(".minutes"),
-		timerSeconds = document.querySelector(".seconds")
-
-	let timerDiv = [timerDays, timerHours, timerMinutes, timerSeconds]
-	let timerValues = [daysEl, hoursEl, minutesEl, secondsEl]
 	
 	updateTimer()
-	
-	timerValues.forEach((value, index) => {
-		if(value.innerText == 0){
-			timerDiv[index].style.display = "none"
-		}
-	})
 }
 
 function addZero(num){

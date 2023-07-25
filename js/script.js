@@ -1,16 +1,6 @@
 let sliderBtn = document.querySelectorAll(".slider-part svg")
-let slider = document.querySelectorAll(".slider")
+let slider = document.querySelector(".slides-inner")
 let sliderIndex = 0
-
-function show(value, index){
-    hide(value)
-    value[index].classList.add("active")
-}
-function hide(value){
-    value.forEach(slide => {
-        slide.classList.remove("active")
-    })
-}
 
 sliderBtn[0].addEventListener("click", () => {
     if(sliderIndex <= 0){
@@ -19,7 +9,7 @@ sliderBtn[0].addEventListener("click", () => {
         sliderIndex--
     }
 
-    show(slider, sliderIndex)
+    slider.style.transform = `translateX(-${sliderIndex * 100}%)`
 })
 
 sliderBtn[1].addEventListener("click", () => {
@@ -29,12 +19,26 @@ sliderBtn[1].addEventListener("click", () => {
         sliderIndex++
     }
 
-    show(slider, sliderIndex)
+    slider.style.transform = `translateX(-${sliderIndex * 100}%)`
 })
 
 let tabChange = document.querySelectorAll(".tab-change p")
 let tabImg = document.querySelectorAll(".tab-img img")
 let tabContent = document.querySelectorAll(".tab .content-text")
+
+function show(value, index){
+    value.forEach(slide => {
+        slide.classList.remove("active")
+    })
+
+    if(value == tabImg){
+        value[index].classList.add("active")
+        value[index + tabImg.length / 3].classList.add("active")
+        value[index + tabImg.length / 3 * 2].classList.add("active")
+    }else{
+        value[index].classList.add("active")
+    }
+}
 
 tabChange.forEach((value, index) => {
     value.addEventListener("click", () => {

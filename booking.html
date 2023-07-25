@@ -28,46 +28,45 @@
             <form action="#" id="form">
                 <div class="input">
                     <input type="text" name="firstname" id="firstname" placeholder="Name">
-                    <p class="error">This field is required</p>
+                    <p class="error-text">This field is required</p>
                 </div>
                 <div class="input">
                     <input type="email" name="email" id="email" placeholder="Email">
-                    <p class="error">This field is required</p>
+                    <p class="error-text">This field is required</p>
                 </div>
 
                 <div class="date">
                     <div class="label">
                         <label for="month">Pick a date</label>
-                        <p class="error">This field is incomplete</p>
+                        <p class="error-text">This field is incomplete</p>
                     </div>
                     <div class="select">
                         <select name="month" id="month">
-                            <option value="0">MM</option>
+                            <option value="-1" hidden>MM</option>
                         </select>
                         <select name="day" id="day">
-                            <option value="0">DD</option>
+                            <option value="-1" hidden>DD</option>
                         </select>
                         <select name="year" id="year">
-                            <option value="0">YYYY</option>
-                            <option value="1">2023</option>
+                            <option value="-1" hidden>YYYY</option>
                         </select>
                     </div>
                 </div>
                 <div class="time">
                     <div class="label">
                         <label for="hour">Pick a time</label>
-                        <p class="error">This field is incomplete</p>
+                        <p class="error-text">This field is incomplete</p>
                     </div>
                     <div class="select">
                         <select name="hour" id="hour">
-                            <option value="0">09</option>
+                            <option value="-1" hidden>hh</option>
                         </select>
                         <select name="minute" id="minute">
-                            <option value="0">00</option>
+                            <option value="-1" hidden>mm</option>
                         </select>
                         <select name="part" id="part">
-                            <option value="0">AM</option>
-                            <option value="1">PM</option>
+                            <option>AM</option>
+                            <option>PM</option>
                         </select>
                     </div>
                 </div>
@@ -82,6 +81,9 @@
                 </div>
                 <button type="submit" class="btn">MAKE RESERVATION</button>
             </form>
+        </div>
+        <div class="page">
+            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="76"><g fill="#9E7F66" fill-rule="evenodd"><path d="M0 70h160v6H0zM0 56h160v6H0zM0 42h160v6H0zM0 28h160v6H0zM0 14h160v6H0zM0 0h160v6H0z"/></g></svg>
         </div>
     </header>
 
