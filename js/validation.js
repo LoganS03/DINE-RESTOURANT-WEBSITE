@@ -12,7 +12,7 @@ let errorEmail = document.querySelectorAll("form .error-email")
 let label = document.querySelectorAll("label")
 
 let inpStatus = []
-
+let date = new Date()
 
 function addOption(select, index){
 	let i = 0
@@ -77,15 +77,73 @@ function hideError(index){
 	inputs[index].classList.remove("error")
 }
 
-function inpEmailValidate(input, index){
-	if(!input.value.includes("@") || (!input.value.includes("gmail.com") && !input.value.includes("email.com"))){
+function inpSelectValidate(input, index){
+	if(input.value == 0){
+		error[2].textContent = 'This field is incomplete'
 		showError(index)
-		error[index].innerText = "Email is invalid"
 		inpStatus[index] = false
 	}else{
-		hideError(index)
+		if(input.name == 'month'){
+			if(input.value < date.getMonth() + 1){
+				error[2].textContent = 'Invalid date'
+				showError(index)
+				inpStatus[index] = false
+			}
+			else{
+				inpStatus[index] = true
+				hideError(index)
+			}
+		}
+		else if(input.name == 'day'){
+			if(inputs[index - 1].value == date.getMonth() + 1){
+				if(input.value < date.getDate()){
+					error[2].textContent = 'Invalid date'
+					showError(index)
+					inpStatus[index] = false
+				}
+				else{
+					inpStatus[index] = true
+					hideError(index)
+				}
+			}
+		}
+		else if(input.name == 'hour'){
+			if((inputs[index - 3].value == date.getMonth() + 1) && (inputs[index - 2].value == date.getDate())){
+				if((inputs[index + 2].value == 'AM' && input.value <= date.getHours()) || (inputs[index + 2].value == 'PM' && +input.value + 12 <= date.getHours())){
+					error[3].textContent = 'Invalid time'
+					showError(index)
+					inpStatus[index] = false
+				}
+				else{
+					inpStatus[index] = true
+					hideError(index)
+				}
+			}
+			else{
+				inpStatus[index] = true
+				hideError(index)
+			}
+		}
+		else{
+			inpStatus[index] = true
+			hideError(index)
+		}
+	}
+}
+function inpEmailValidate(input, index){
+	if(input.value === ''){
 		error[index].innerText = "This field is required"
-		inpStatus[index] = true
+		showError(index)
+		inpStatus[index] = false
+	}else{
+		if(!input.value.includes("@") || (!input.value.includes("gmail.com") && !input.value.includes("email.com"))){
+			showError(index)
+			error[index].innerText = "Email is invalid"
+			inpStatus[index] = false
+		}else{
+			hideError(index)
+			inpStatus[index] = true
+		}
 	}
 }
 function inpValidate(){
@@ -107,6 +165,9 @@ function inpValidate(){
 				if(input.name === 'email'){
 					inpEmailValidate(input, index)
 				}
+				if(input.type = "select-one"){
+					inpSelectValidate(input, index)
+				}
 			})
 
 			input.addEventListener("input", (e) => {
@@ -117,7 +178,7 @@ function inpValidate(){
 
 			input.addEventListener('change', () => {
 				if(input.name == "month"){
-					selectDay.innerHTML = "<option value='1' hidden>01</option>"
+					selectDay.innerHTML = "<option value='0' hidden>DD</option>"
 					if(input.value % 2 == 0){
 						if(input.value == 2){
 							if((year % 4 == 0) && (year % 100 != 0 || year % 400 == 0)){
@@ -135,13 +196,7 @@ function inpValidate(){
 				}
 
 				if(input.type = "select-one"){
-					if(input.value === -1){
-						showError(index)
-						inpStatus[index] = false
-					}else{
-						inpStatus[index] = true
-						hideError(index)
-					}
+					inpSelectValidate(input, index)
 				}
 			})
 		}
@@ -165,7 +220,7 @@ function isEmpty(){
 			}
 		}
 		else if(input.type == "select-one"){
-			if(input.value == -1){
+			if(input.value == 0){
 				showError(index)
 				inpStatus[index] == false
 			}
@@ -194,7 +249,7 @@ plus.addEventListener('click', () => {
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault()
-	let formData = new FormData(form)
+
 	let values = {
 		firstname: inputs[0].value,
 		email: inputs[1].value,
